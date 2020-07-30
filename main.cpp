@@ -1,4 +1,5 @@
 #include <iostream>
+#include <time.h>
 #include <stdlib.h>
 
 using namespace std;
@@ -8,6 +9,7 @@ class guesser
 public:
 	void guess()
 	{
+		srand((unsigned) time(0));
 		int computerGuess = rand() % 10 + 1;
 		while (tries < 2)
 		{
@@ -51,6 +53,7 @@ public:
 		}
 	}
 private:
+	int computerGuess;
 	int guessAttempt;
 	string playAgain;
 	int tries = 0;
